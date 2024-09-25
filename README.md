@@ -17,9 +17,10 @@ A  platform designed to empower gender minorities by providing essential tools f
 
 ## **User Stories**
 - *As a user*, I want to browse resources that focus on personal empowerment, career development, and financial well-being.
-- *As a user*, I want to log and categorize my income and expenses to effectively manage my budget and stay financially on track.
-- *As a user*, I want to set savings goals and track my progress towards achieving them.
-- *As a user*, I want to log and monitor gender diversity metrics, such as women in leadership roles and pay equity, to foster accountability and transparency in the workplace.
+- *As a user*, I want to be able to log an expense (with a category and amount) to the finance tracker, so I can manage my monthly budget.
+- *As a user*, I want to view a list of my logged expenses, categorized by type, to monitor where my money is going.
+- *As a user*, I want to be able to log gender diversity data for a company, including women in leadership percentage and pay gap percentage, so I can track progress toward gender equity goals.
+- *As a user*, I want to view a report of the logged gender diversity data for a company, so I can assess its current status and improvements.
 
 ## **Why EquiTrack?**
 *EquiTrack* is a reflection of my passion for creating solutions that promote fairness, inclusion, and personal development.
