@@ -18,34 +18,52 @@ public class ResourceManager {
     // MODIFIES: this
     // EFFECTS: adds a resource to the library if it doesn't already exist
     public void addResource(Resource resource) {
-        //stub
+        if (!resourceExists(resource)) {
+            resources.add(resource);
+        }
     }
 
     // MODIFIES: this
     // EFFECTS: removes a resource from the library by title or URL
     public void removeResource(String titleOrUrl) {
-       //stub
+        resources.removeIf(r -> r.getTitle().equalsIgnoreCase(titleOrUrl) || r.getUrl().equalsIgnoreCase(titleOrUrl));
     }
 
     // EFFECTS: returns a list of all resources in the library
     public List<Resource> getResources() {
-        return null;
+        return resources;
     }
 
     // EFFECTS: searches for resources by title and returns a list of matches
     public List<Resource> searchByTitle(String title) {
-        return null;
+        List<Resource> foundResources = new ArrayList<>();
+        for (Resource r : resources) {
+            if (r.getTitle().equalsIgnoreCase(title)) {
+                foundResources.add(r);
+            }
+        }
+        return foundResources;
     }
 
     // EFFECTS: searches for resources by category and returns a list of matches
     public List<Resource> searchByCategory(String category) {
-        return null;
+        List<Resource> foundResources = new ArrayList<>();
+        for (Resource r : resources) {
+            if (r.getCategories().contains(category)) {
+                foundResources.add(r);
+            }
+        }
+        return foundResources;
     }
 
     // EFFECTS: checks if a resource already exists in the library (by title or URL)
     private boolean resourceExists(Resource resource) {
+        for (Resource r : resources) {
+            if (r.isEqual(resource)) {
+                return true;
+            }
+        }
         return false;
-}
-
+    }
 }
 
