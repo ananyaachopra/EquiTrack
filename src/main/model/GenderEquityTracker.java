@@ -8,7 +8,7 @@ import java.util.List;
  * Provides methods to add, remove, list, and analyze company data.
  */
 public class GenderEquityTracker {
-    private List<Company> companies; 
+    private List<Company> companies;
 
     // EFFECTS: creates an empty gender equity tracker
     public GenderEquityTracker() {
@@ -32,8 +32,9 @@ public class GenderEquityTracker {
         return companies;
     }
 
-    // EFFECTS: returns the average percentage of women in leadership across all companies
-    public double AverageWomenInLeadership() {
+    // EFFECTS: returns the average percentage of women in leadership across all
+    // companies
+    public double averageWomenInLeadership() {
         if (companies.isEmpty()) {
             return 0;
         }
@@ -45,7 +46,7 @@ public class GenderEquityTracker {
     }
 
     // EFFECTS: returns the average pay gap across all companies
-    public double AveragePayGap() {
+    public double averagePayGap() {
         if (companies.isEmpty()) {
             return 0;
         }
@@ -56,7 +57,8 @@ public class GenderEquityTracker {
         return totalPayGap / companies.size();
     }
 
-    // EFFECTS: returns the company with the highest percentage of women in leadership, or null if there are no companies
+    // EFFECTS: returns the company with the highest percentage of women in
+    // leadership, or null if there are no companies
     public Company getHighestWomenInLeadership() {
         if (companies.isEmpty()) {
             return null;
@@ -70,7 +72,8 @@ public class GenderEquityTracker {
         return highest;
     }
 
-    // EFFECTS: returns the company with the lowest pay gap, or null if there are no companies
+    // EFFECTS: returns the company with the lowest pay gap, or null if there are no
+    // companies
     public Company getLowestPayGap() {
         if (companies.isEmpty()) {
             return null;
@@ -85,15 +88,15 @@ public class GenderEquityTracker {
     }
 
     // EFFECTS: returns the average diversity ratio across all companies
-public double AverageDiversityRatio() {
-    if (companies.isEmpty()) {
-        return 0;
+    public double averageDiversityRatio() {
+        if (companies.isEmpty()) {
+            return 0;
+        }
+        double totalDiversityRatio = 0;
+        for (Company company : companies) {
+            totalDiversityRatio += company.getDiversityRatio();
+        }
+        return totalDiversityRatio / companies.size();
     }
-    double totalDiversityRatio = 0;
-    for (Company company : companies) {
-        totalDiversityRatio += company.getDiversityRatio();
-    }
-    return totalDiversityRatio / companies.size();
-}
 
 }

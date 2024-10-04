@@ -44,34 +44,34 @@ public class TestGenderEquityTracker {
 
     @Test
     public void testAverageWomenInLeadership() {
-        assertEquals(0, tracker.AverageWomenInLeadership(), 0.01);
+        assertEquals(0, tracker.averageWomenInLeadership(), 0.01);
 
         tracker.addCompany(company1);
         tracker.addCompany(company2);
         tracker.addCompany(company3);
 
-        assertEquals(35, tracker.AverageWomenInLeadership(), 0.01);
+        assertEquals(35, tracker.averageWomenInLeadership(), 0.01);
     }
 
     @Test
     public void testAveragePayGap() {
-        assertEquals(0, tracker.AveragePayGap(), 0.01);
+        assertEquals(0, tracker.averagePayGap(), 0.01);
 
         tracker.addCompany(company1);
         tracker.addCompany(company2);
         tracker.addCompany(company3);
 
-        assertEquals(11, tracker.AveragePayGap(), 0.01);
+        assertEquals(11, tracker.averagePayGap(), 0.01);
     }
 
     @Test
     public void testAverageDiversityRatio() {
-        assertEquals(0, tracker.AverageDiversityRatio(), 0.01);
+        assertEquals(0, tracker.averageDiversityRatio(), 0.01);
         tracker.addCompany(company1);
         tracker.addCompany(company2);
         tracker.addCompany(company3);
         
-        assertEquals(40, tracker.AverageDiversityRatio(), 0.01);
+        assertEquals(40, tracker.averageDiversityRatio(), 0.01);
 }
 
 

@@ -8,7 +8,7 @@ import java.util.List;
  * Can add, remove, and list resources, and also search for resources by title or category.
  */
 public class ResourceManager {
-    public List<Resource> resources; 
+    private List<Resource> resources; 
     
     // EFFECTS: creates an empty resource library
     public ResourceManager() {

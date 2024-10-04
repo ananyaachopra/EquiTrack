@@ -8,12 +8,13 @@ import java.util.List;
  * A resource contains a title, category, description, and a URL.
  */
 public class Resource {
-    public String title;
-    public List<String> categories;
-    public String description;
-    public String url;
+    private String title;
+    private List<String> categories;
+    private String description;
+    private String url;
 
-    // EFFECTS: creates a resource with the given title, category, description, and url
+    // EFFECTS: creates a resource with the given title, category, description, and
+    // url
     public Resource(String title, String category, String description, String url) {
         this.title = title;
         this.categories = new ArrayList<>();
@@ -30,7 +31,7 @@ public class Resource {
 
     // MODIFIES: this
     // EFFECTS: adds a category to the list if it's not already present
-    public void addCategory(String category) {       
+    public void addCategory(String category) {
         if (!categories.contains(category)) {
             categories.add(category);
         }
@@ -47,6 +48,7 @@ public class Resource {
     public void updateTitle(String newTitle) {
         this.title = newTitle;
     }
+
     // MODIFIES: this
     // EFFECTS: updates the description of the resource
     public void updateDescription(String newDescription) {
@@ -54,8 +56,8 @@ public class Resource {
     }
 
     // MODIFIES: this
-    // EFFECTS: updates the URL of the resource   
-     public void updateUrl(String newUrl) {
+    // EFFECTS: updates the URL of the resource
+    public void updateUrl(String newUrl) {
         this.url = newUrl;
     }
 
@@ -77,14 +79,12 @@ public class Resource {
 
     // EFFECTS: returns all details of the resource as a formatted string
     public String getResourceDetails() {
-        return "Title: " + title + "\n" +
-               "Categories: " + categories + "\n" +
-               "Description: " + description + "\n" +
-               "URL: " + url;
+        return "Title: " + title + "\n"
+                +
+                "Categories: " + categories + "\n"
+                +
+                "Description: " + description + "\n"
+                +
+                "URL: " + url;
     }
 }
-   
-
-    
-
-

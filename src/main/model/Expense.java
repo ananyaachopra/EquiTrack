@@ -10,9 +10,10 @@ public class Expense {
     private String category;
     private double amount;
     private String description;
-    private LocalDate date; 
+    private LocalDate date;
 
-    // EFFECTS: creates an expense with the given category, amount, description, and date
+    // EFFECTS: creates an expense with the given category, amount, description, and
+    // date
     public Expense(String category, double amount, String description, LocalDate date) {
         this.category = category;
         this.amount = amount;
@@ -57,10 +58,13 @@ public class Expense {
 
     // EFFECTS: returns a formatted string containing all details of the expense
     public String getExpenseDetails() {
-        return "Category: " + category + "\n" +
-               "Amount: $" + String.format("%.2f", amount) + "\n" +
-               "Description: " + description + "\n" +
-               "Date: " + date.toString();
+        return "Category: " + category + "\n"
+                +
+                "Amount: $" + String.format("%.2f", amount) + "\n"
+                +
+                "Description: " + description + "\n"
+                +
+                "Date: " + date.toString();
     }
 
     public String getCategory() {
