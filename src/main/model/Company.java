@@ -8,13 +8,15 @@ package model;
 public class Company {
     private String name;              
     private double womenInLeadership; 
-    private double payGap;            
+    private double payGap;  
+    private double diversityRatio;           
 
     // EFFECTS: creates a company with the given name, women in leadership percentage, and pay gap percentage
-    public Company(String name, double womenInLeadership, double payGap) {
+    public Company(String name, double womenInLeadership, double payGap, double diversityRatio) {
         this.name = name;
         this.womenInLeadership = womenInLeadership;
         this.payGap = payGap;
+        this.diversityRatio = diversityRatio;
     }
 
     // MODIFIES: this
@@ -29,11 +31,17 @@ public class Company {
         this.payGap = newPayGap;
     }
 
+    // MODIFIES: this
+    // EFFECTS: updates the overall diversity ratio
+    public void updateDiversityRatio(double newDiversityRatio) {
+        this.diversityRatio = newDiversityRatio;
+    }
     // EFFECTS: returns a string with all the company's gender equity details
     public String getCompanyDetails() {
         return "Company Name: " + name + "\n" +
                "Women in Leadership: " + womenInLeadership + "%\n" +
-               "Pay Gap: " + payGap + "%";
+               "Pay Gap: " + payGap + "%"+
+               "Overall Diversity Ratio: " + diversityRatio + "%";
     }
 
     public String getName() {
@@ -47,4 +55,9 @@ public class Company {
     public double getPayGap() {
         return payGap;
     }
+
+    public double getDiversityRatio() {
+        return diversityRatio;
+    }
+
 }
