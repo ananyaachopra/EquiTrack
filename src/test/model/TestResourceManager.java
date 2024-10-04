@@ -13,7 +13,7 @@ public class TestResourceManager {
     private Resource resource3;
 
     @BeforeEach
-    public void setUp() {
+    public void runBefore() {
         manager = new ResourceManager();
         resource1 = new Resource("Financial Literacy", "Finance", "A guide to managing personal finances.", "https://www.finances.com");
         resource2 = new Resource("Career Development", "Career", "Tips for advancing in your career.", "https://www.builtin.com");

@@ -10,7 +10,7 @@ public class TestExpense {
     private Expense expense;
 
     @BeforeEach
-    public void setUp() {
+    public void runBefore() {
         expense = new Expense("Housing", 1200, 
         "Rent for October", LocalDate.of(2024, 10, 1));
     }
