@@ -40,8 +40,8 @@ public class Company {
     public String getCompanyDetails() {
         return "Company Name: " + name + "\n" +
                "Women in Leadership: " + womenInLeadership + "%\n" +
-               "Pay Gap: " + payGap + "%"+
-               "Overall Diversity Ratio: " + diversityRatio + "%";
+               "Pay Gap: " + payGap + "%\n" +
+               "Overall Diversity Ratio: " + diversityRatio ;
     }
 
     public String getName() {

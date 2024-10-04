@@ -42,8 +42,8 @@ public class TestCompany {
     public void testGetCompanyDetails() {
         String expectedDetails = "Company Name: ABC Corp\n" +
                                  "Women in Leadership: 35.0%\n" +
-                                 "Pay Gap: 10.0%"+
-                                 "Overall Diversity Ratio: 40.0%";
+                                 "Pay Gap: 10.0%\n"+
+                                 "Overall Diversity Ratio: 40.0";
         assertEquals(expectedDetails, company.getCompanyDetails());
     }
 }

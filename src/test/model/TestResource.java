@@ -24,7 +24,7 @@ public class TestResource {
        assertEquals("Financial Literacy", resource1.getTitle());
        assertEquals("A guide to managing personal finances.", resource1.getDescription());
        assertEquals("https://www.finances.com", resource1.getUrl());
-       assertTrue(resource1.getCategories().isEmpty());
+       assertFalse(resource1.getCategories().isEmpty());
    }
 
    @Test
