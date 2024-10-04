@@ -23,39 +23,44 @@ public class Expense {
     // MODIFIES: this
     // EFFECTS: updates the amount of the expense
     public void updateAmount(double newAmount) {
-        //stub
+        this.amount = newAmount;
     }
 
     // EFFECTS: returns true if the expense is in the specified category
     public boolean isInCategory(String category) {
-        return false;
+        return this.category.equalsIgnoreCase(category);
     }
 
     // EFFECTS: returns true if the expense exceeds the given budget amount
     public boolean exceedsBudget(double budgetAmount) {
-        return false;
+        return this.amount > budgetAmount;
     }
 
     // EFFECTS: returns true if the expense occurred in the specified month and year
     public boolean isInMonth(int month, int year) {
-        return false;
+        return this.date.getMonthValue() == month && this.date.getYear() == year;
     }
 
     // MODIFIES: this
     // EFFECTS: applies a discount (in percentage) to the expense amount
     public void applyDiscount(double discountPercentage) {
-        //stub
+        double discount = (discountPercentage / 100) * this.amount;
+        this.amount -= discount;
     }
 
     // MODIFIES: this
     // EFFECTS: applies a tax (in percentage) to the expense amount
     public void applyTax(double taxPercentage) {
-        //stub
+        double tax = (taxPercentage / 100) * this.amount;
+        this.amount += tax;
     }
 
     // EFFECTS: returns a formatted string containing all details of the expense
     public String getExpenseDetails() {
-        return "";
+        return "Category: " + category + "\n" +
+               "Amount: $" + String.format("%.2f", amount) + "\n" +
+               "Description: " + description + "\n" +
+               "Date: " + date.toString();
     }
 
     public String getCategory() {
