@@ -17,6 +17,7 @@ public class Resource {
     public Resource(String title, String category, String description, String url) {
         this.title = title;
         this.categories = new ArrayList<>();
+        this.categories.add(category);
         this.description = description;
         this.url = url;
     }
