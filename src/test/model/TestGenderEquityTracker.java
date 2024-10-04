@@ -15,9 +15,9 @@ public class TestGenderEquityTracker {
     @BeforeEach
     public void runBefore() {
         tracker = new GenderEquityTracker();
-        company1 = new Company("ABC Corp", 35, 15);
-        company2 = new Company("XYZ Inc", 50, 8);
-        company3 = new Company("Tech Solutions", 20, 10);
+        company1 = new Company("ABC Corp", 35, 15, 30);
+        company2 = new Company("XYZ Inc", 50, 8, 50);
+        company3 = new Company("Tech Solutions", 20, 10, 40);
     }
 
     @Test
@@ -63,6 +63,17 @@ public class TestGenderEquityTracker {
 
         assertEquals(11, tracker.AveragePayGap(), 0.01);
     }
+
+    @Test
+    public void testAverageDiversityRatio() {
+        assertEquals(0, tracker.AverageDiversityRatio(), 0.01);
+        tracker.addCompany(company1);
+        tracker.addCompany(company2);
+        tracker.addCompany(company3);
+        
+        assertEquals(40, tracker.AverageDiversityRatio(), 0.01);
+}
+
 
     @Test
     public void testGetHighestWomenInLeadership() {

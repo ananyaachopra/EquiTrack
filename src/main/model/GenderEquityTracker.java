@@ -83,4 +83,17 @@ public class GenderEquityTracker {
         }
         return lowest;
     }
+
+    // EFFECTS: returns the average diversity ratio across all companies
+public double AverageDiversityRatio() {
+    if (companies.isEmpty()) {
+        return 0;
+    }
+    double totalDiversityRatio = 0;
+    for (Company company : companies) {
+        totalDiversityRatio += company.getDiversityRatio();
+    }
+    return totalDiversityRatio / companies.size();
+}
+
 }
