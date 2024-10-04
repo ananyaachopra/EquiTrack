@@ -9,7 +9,7 @@ public class TestCompany {
 
     @BeforeEach
     public void runBefore() {
-        company = new Company("ABC Corp", 35, 10);
+        company = new Company("ABC Corp", 35, 10,40);
     }
 
     @Test
@@ -17,6 +17,7 @@ public class TestCompany {
         assertEquals("ABC Corp", company.getName());
         assertEquals(35, company.getWomenInLeadership());
         assertEquals(10, company.getPayGap());
+        assertEquals(40, company.getDiversityRatio());
     }
 
     @Test
@@ -32,10 +33,17 @@ public class TestCompany {
     }
 
     @Test
+    public void testUpdateDiversityRatio() {
+        company.updateDiversityRatio(45);
+        assertEquals(45, company.getDiversityRatio());
+    }
+
+    @Test
     public void testGetCompanyDetails() {
         String expectedDetails = "Company Name: ABC Corp\n" +
                                  "Women in Leadership: 35.0%\n" +
-                                 "Pay Gap: 10.0%";
+                                 "Pay Gap: 10.0%"+
+                                 "Overall Diversity Ratio: 40.0%";
         assertEquals(expectedDetails, company.getCompanyDetails());
     }
 }
