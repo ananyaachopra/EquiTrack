@@ -24,19 +24,21 @@ public class Resource {
     // REQUIRES: other must be non-null
     // EFFECTS: returns true if the titles or URLs of two resources are the same
     public boolean isEqual(Resource other) {
-        return true;
+        return this.title.equalsIgnoreCase(other.getTitle()) || this.url.equalsIgnoreCase(other.getUrl());
     }
 
     // MODIFIES: this
     // EFFECTS: adds a category to the list if it's not already present
     public void addCategory(String category) {       
-        //stub
+        if (!categories.contains(category)) {
+            categories.add(category);
         }
+    }
 
     // MODIFIES: this
     // EFFECTS: removes the specified category
     public void removeCategory(String category) {
-        //stub
+        categories.remove(category);
     }
 
     // MODIFIES: this
