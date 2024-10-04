@@ -20,18 +20,20 @@ public class Company {
     // MODIFIES: this
     // EFFECTS: updates the percentage of women in leadership
     public void updateWomenInLeadership(double newPercentage) {
-        //stub
+        this.womenInLeadership = newPercentage;
     }
 
     // MODIFIES: this
     // EFFECTS: updates the pay gap percentage
     public void updatePayGap(double newPayGap) {
-        //stub
+        this.payGap = newPayGap;
     }
 
     // EFFECTS: returns a string with all the company's gender equity details
     public String getCompanyDetails() {
-        return "";
+        return "Company Name: " + name + "\n" +
+               "Women in Leadership: " + womenInLeadership + "%\n" +
+               "Pay Gap: " + payGap + "%";
     }
 
     public String getName() {
@@ -46,4 +48,3 @@ public class Company {
         return payGap;
     }
 }
-
