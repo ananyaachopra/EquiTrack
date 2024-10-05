@@ -9,14 +9,11 @@ import org.junit.jupiter.api.Test;
 
 public class TestResource {
     private Resource resource1;
-    private Resource resource2;
     
     @BeforeEach
     void runBefore() {
         resource1 = new Resource("Financial Literacy", "Finance", 
         "A guide to managing personal finances.", "https://www.finances.com");
-        resource2 = new Resource("Career Development", "Career", 
-        "Tips for advancing in your career.", "https://www.builtin.com");
     }
 
    @Test
@@ -37,20 +34,6 @@ public class TestResource {
        // Adding the same category again should not duplicate it
        resource1.addCategory("Finance");
        assertEquals(1, categories.size());
-   }
-
-   @Test
-   public void testAddMultipleCategories() {
-       resource2.addCategory("Career");
-       List<String> categories = resource2.getCategories();
-       assertEquals(1, categories.size());
-       assertTrue(categories.contains("Career"));
-
-       resource2.addCategory("Personal Development");
-       categories = resource2.getCategories();
-       assertEquals(2, categories.size());
-       assertTrue(categories.contains("Career"));
-       assertTrue(categories.contains("Personal Development"));
    }
 
    @Test

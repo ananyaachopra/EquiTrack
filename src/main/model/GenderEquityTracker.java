@@ -57,6 +57,18 @@ public class GenderEquityTracker {
         return totalPayGap / companies.size();
     }
 
+    // EFFECTS: returns the average diversity ratio across all companies
+    public double averageDiversityRatio() {
+        if (companies.isEmpty()) {
+            return 0;
+        }
+        double totalDiversityRatio = 0;
+        for (Company company : companies) {
+            totalDiversityRatio += company.getDiversityRatio();
+        }
+        return totalDiversityRatio / companies.size();
+    }
+
     // EFFECTS: returns the company with the highest percentage of women in
     // leadership, or null if there are no companies
     public Company getHighestWomenInLeadership() {
@@ -85,18 +97,6 @@ public class GenderEquityTracker {
             }
         }
         return lowest;
-    }
-
-    // EFFECTS: returns the average diversity ratio across all companies
-    public double averageDiversityRatio() {
-        if (companies.isEmpty()) {
-            return 0;
-        }
-        double totalDiversityRatio = 0;
-        for (Company company : companies) {
-            totalDiversityRatio += company.getDiversityRatio();
-        }
-        return totalDiversityRatio / companies.size();
     }
 
 }

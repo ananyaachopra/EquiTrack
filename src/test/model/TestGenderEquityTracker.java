@@ -74,7 +74,6 @@ public class TestGenderEquityTracker {
         assertEquals(40, tracker.averageDiversityRatio(), 0.01);
 }
 
-
     @Test
     public void testGetHighestWomenInLeadership() {
         assertEquals(null, tracker.getHighestWomenInLeadership());

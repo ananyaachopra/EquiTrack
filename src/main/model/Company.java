@@ -2,7 +2,7 @@ package model;
 
 /**
  * Represents a company with gender diversity metrics.
- * Contains the name, percentage of women in leadership, and pay gap percentage.
+ * Contains the name, percentage of women in leadership, pay gap percentage, and diversity ratio.
  */
 
 public class Company {
@@ -12,7 +12,7 @@ public class Company {
     private double diversityRatio;
 
     // EFFECTS: creates a company with the given name, women in leadership
-    // percentage, and pay gap percentage
+    // percentage, pay gap percentage, and diversity ratio
     public Company(String name, double womenInLeadership, double payGap, double diversityRatio) {
         this.name = name;
         this.womenInLeadership = womenInLeadership;

@@ -31,7 +31,7 @@ public class Expense {
     public boolean isInCategory(String category) {
         return this.category.equalsIgnoreCase(category);
     }
-
+     
     // EFFECTS: returns true if the expense exceeds the given budget amount
     public boolean exceedsBudget(double budgetAmount) {
         return this.amount > budgetAmount;

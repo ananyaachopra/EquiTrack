@@ -25,7 +25,7 @@ public class FinanceManager {
     // EFFECTS: removes the first expense that matches the category and description
     public void removeExpense(String category, String description) {
         expenses.removeIf(expense -> expense.getCategory().equalsIgnoreCase(category)
-                && expense.getDescription().equalsIgnoreCase(description));
+        && expense.getDescription().equalsIgnoreCase(description));
     }
 
     // EFFECTS: returns a list of all expenses
