@@ -8,7 +8,7 @@ import java.util.List;
  * Provides methods to add, remove, list, and filter expenses.
  */
 public class FinanceManager {
-    private List<Expense> expenses; 
+    private List<Expense> expenses;
 
     // EFFECTS: creates an empty finance manager
     public FinanceManager() {
@@ -25,7 +25,7 @@ public class FinanceManager {
     // EFFECTS: removes the first expense that matches the category and description
     public void removeExpense(String category, String description) {
         expenses.removeIf(expense -> expense.getCategory().equalsIgnoreCase(category)
-        && expense.getDescription().equalsIgnoreCase(description));
+                && expense.getDescription().equalsIgnoreCase(description));
     }
 
     // EFFECTS: returns a list of all expenses
@@ -64,7 +64,8 @@ public class FinanceManager {
         return filtered;
     }
 
-    // EFFECTS: finds and returns the highest expense, or null if there are no expenses
+    // EFFECTS: finds and returns the highest expense, or null if there are no
+    // expenses
     public Expense getHighestExpense() {
         if (expenses.isEmpty()) {
             return null;
@@ -83,4 +84,3 @@ public class FinanceManager {
         return expenses.size();
     }
 }
-
