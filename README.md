@@ -21,8 +21,8 @@ A  platform designed to empower gender minorities by providing essential tools f
 - *As a user*, I want to view a list of my logged expenses, categorized by type, to monitor where my money is going.
 - *As a user*, I want to be able to log gender diversity data for a company, including women in leadership percentage and pay gap percentage, so I can track progress toward gender equity goals.
 - *As a user*, I want to view a report of the logged gender diversity data for a company, so I can assess its current status and improvements.
-- *As a user*, I want to be able to save the state of my resource library, expense tracker, and gender equity tracker to a file, so I can retrieve it later.
-- *As a user*, I want to be able to load previously saved data for my resource library, expenses, and gender equity data from a file, so I can access all the resources, expenses, and diversity information I had entered in my last session.
+- *As a user*, I want to be able to save the state of my resource library, expense tracker, and gender equity tracker, so I can retrieve it later.
+- *As a user*, I want to be able to load previously saved data for my resource library, expenses, and gender equity data, so I can access all the information I had entered in my last session.
 
 
 ## **Why EquiTrack?**
