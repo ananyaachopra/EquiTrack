@@ -26,7 +26,7 @@
         "name": "TechCorp",
         "womenInLeadershipPercentage": 40,
         "payGapPercentage": 20,
-        "overallDiversityPercentage": 60
+        "overallDiversityRatio": 60
       }
     ]
   }

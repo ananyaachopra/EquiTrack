@@ -89,7 +89,7 @@ public class JsonReader {
         String name = json.getString("name");
         int womenInLeadershipPercentage = json.getInt("womenInLeadershipPercentage");
         int payGapPercentage = json.getInt("payGapPercentage");
-        int overallDiversityPercentage = json.getInt("overallDiversityPercentage");
-        return new Company(name, womenInLeadershipPercentage, payGapPercentage, overallDiversityPercentage);
+        int overallDiversityRatio = json.getInt("overallDiversityRatio");
+        return new Company(name, womenInLeadershipPercentage, payGapPercentage, overallDiversityRatio);
     }
 }
