@@ -6,13 +6,20 @@ import model.Resource;
 import model.FinanceManager;
 import model.GenderEquityTracker;
 import model.ResourceManager;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 import java.util.Scanner;
+
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.time.LocalDate;
 
 /**
  * The main user interface for the EquiTrack application.
- * This console-based UI allows users to interact with the Resource Manager, Finance Manager, and Gender Equity Tracker.
+ * This console-based UI allows users to interact with the Resource Manager,
+ * Finance Manager, and Gender Equity Tracker.
  */
 public class EquiTrackApp {
     private ResourceManager resourceManager;
@@ -55,6 +62,8 @@ public class EquiTrackApp {
         System.out.println("\tr -> Manage Resources");
         System.out.println("\tf -> Manage Finances");
         System.out.println("\te -> Manage Gender Equity Tracker");
+        System.out.println("\ts -> Save application state to file");
+        System.out.println("\tl -> Load application state from file");
         System.out.println("\tq -> Quit");
     }
 
@@ -71,6 +80,12 @@ public class EquiTrackApp {
             case "e":
                 manageGenderEquityTracker();
                 break;
+            case "s":
+                saveState();
+                break;
+            case "l":
+                loadState();
+                break;
             default:
                 System.out.println("Selection not valid...");
         }
@@ -82,7 +97,7 @@ public class EquiTrackApp {
         System.out.println("\ta -> Add a Resource");
         System.out.println("\tv -> View All Resources");
         System.out.println("\tb -> Back to Main Menu");
-        
+
         String command = input.next().toLowerCase();
 
         if (command.equals("a")) {
@@ -101,7 +116,7 @@ public class EquiTrackApp {
         String title = input.nextLine();
 
         System.out.println("Enter the category of the resource:");
-        String category = input.nextLine();
+        String category = input.nextLine();  
 
         System.out.println("Enter the description of the resource:");
         String description = input.nextLine();
@@ -109,10 +124,12 @@ public class EquiTrackApp {
         System.out.println("Enter the URL of the resource:");
         String url = input.nextLine();
 
+        // Create the resource object and add it to the resource manager
         Resource resource = new Resource(title, category, description, url);
         resourceManager.addResource(resource);
         System.out.println("Resource added successfully!");
     }
+
 
     // EFFECTS: displays all resources in the resource manager
     private void viewAllResources() {
@@ -198,7 +215,7 @@ public class EquiTrackApp {
 
     // EFFECTS: allows the user to add a company
     private void addCompany() {
-        input.nextLine(); 
+        input.nextLine();
         System.out.println("Enter the company name:");
         String name = input.nextLine();
 
@@ -225,6 +242,31 @@ public class EquiTrackApp {
                 System.out.println(company.getCompanyDetails());
                 System.out.println("----------------------------");
             }
+        }
+    }
+
+    // Save the application state
+    private void saveState() {
+        JsonWriter writer = new JsonWriter("./data/equitrack.json");
+        try {
+            writer.write(resourceManager, financeManager, equityTracker);
+            System.out.println("Application state saved!");
+        } catch (IOException e) {
+            System.out.println("Error saving application state: " + e.getMessage());
+        }
+    }
+
+    // Load the application state
+    private void loadState() {
+        JsonReader reader = new JsonReader("./data/equitrack.json");
+        try {
+            JSONObject json = reader.read();
+            resourceManager = reader.loadResourceManager(json.getJSONObject("resourceManager"));
+            financeManager = reader.loadFinanceManager(json.getJSONObject("financeManager"));
+            equityTracker = reader.loadGenderEquityTracker(json.getJSONObject("genderEquityTracker"));
+            System.out.println("Application state loaded!");
+        } catch (Exception e) {
+            System.out.println("Error loading application state: " + e.getMessage());
         }
     }
 }

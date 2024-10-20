@@ -1,5 +1,5 @@
 package model;
-
+import org.json.JSONObject;
 import java.time.LocalDate;
 
 /**
@@ -81,5 +81,15 @@ public class Expense {
 
     public LocalDate getDate() {
         return date;
+    }
+
+    // EFFECTS: returns this Expense as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("category", category);
+        json.put("amount", amount);
+        json.put("description", description);
+        json.put("date", date.toString()); // Store date as string
+        return json;
     }
 }

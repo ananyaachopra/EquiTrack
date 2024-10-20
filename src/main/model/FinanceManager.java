@@ -1,5 +1,6 @@
 package model;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,5 +83,16 @@ public class FinanceManager {
     // EFFECTS: returns the number of expenses in the finance manager
     public int getNumberExpenses() {
         return expenses.size();
+    }
+
+    // EFFECTS: returns this FinanceManager as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        JSONArray expenseArray = new JSONArray();
+        for (Expense expense : expenses) {
+            expenseArray.put(expense.toJson());  // Assuming Expense has a toJson() method
+        }
+        json.put("expenses", expenseArray);
+        return json;
     }
 }

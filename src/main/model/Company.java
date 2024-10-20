@@ -1,5 +1,5 @@
 package model;
-
+import org.json.JSONObject;
 /**
  * Represents a company with gender diversity metrics.
  * Contains the name, percentage of women in leadership, pay gap percentage, and diversity ratio.
@@ -66,4 +66,13 @@ public class Company {
         return diversityRatio;
     }
 
+    // EFFECTS: returns this Company as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("name", name);
+        json.put("womenInLeadershipPercentage", womenInLeadership);
+        json.put("payGapPercentage", payGap);
+        json.put("overallDiversityRatio", diversityRatio);
+        return json;
+    }
 }

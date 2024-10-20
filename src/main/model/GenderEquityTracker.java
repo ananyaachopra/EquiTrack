@@ -1,5 +1,6 @@
 package model;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,6 +98,17 @@ public class GenderEquityTracker {
             }
         }
         return lowest;
+    }
+
+    // EFFECTS: returns this GenderEquityTracker as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        JSONArray companyArray = new JSONArray();
+        for (Company company : companies) {
+            companyArray.put(company.toJson());  // Assuming Company has a toJson() method
+        }
+        json.put("companies", companyArray);
+        return json;
     }
 
 }
