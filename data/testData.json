@@ -1,0 +1,33 @@
+{
+    "resources": [
+      {
+        "title": "Financial Literacy",
+        "category": "Finance",
+        "description": "A guide to managing personal finances.",
+        "url": "https://www.finances.com"
+      },
+      {
+        "title": "Career Development",
+        "category": "Career",
+        "description": "Tips for advancing in your career.",
+        "url": "https://www.builtin.com"
+      }
+    ],
+    "expenses": [
+      {
+        "category": "Rent",
+        "amount": 1200.0,
+        "description": "Monthly rent for apartment",
+        "date": "2024-10-01"
+      }
+    ],
+    "companies": [
+      {
+        "name": "TechCorp",
+        "womenInLeadershipPercentage": 40,
+        "payGapPercentage": 20,
+        "overallDiversityPercentage": 60
+      }
+    ]
+  }
+  
