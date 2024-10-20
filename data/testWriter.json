@@ -1,0 +1,28 @@
+{
+    "genderEquityTracker": {"companies": [{
+        "womenInLeadershipPercentage": 40,
+        "payGapPercentage": 20,
+        "name": "TechCorp",
+        "overallDiversityRatio": 60
+    }]},
+    "financeManager": {"expenses": [{
+        "date": "2024-10-01",
+        "amount": 1200,
+        "description": "Monthly rent for apartment",
+        "category": "Rent"
+    }]},
+    "resourceManager": {"resources": [
+        {
+            "description": "A guide to managing personal finances.",
+            "title": "Financial Literacy",
+            "category": "Finance",
+            "url": "https://www.finances.com"
+        },
+        {
+            "description": "Tips for advancing in your career.",
+            "title": "Career Development",
+            "category": "Career",
+            "url": "https://www.builtin.com"
+        }
+    ]}
+}

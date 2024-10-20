@@ -14,12 +14,19 @@ public class JsonWriter {
 
     // EFFECTS: constructs writer to write to destination file
     public JsonWriter(String destination) {
-        //stub
+        this.destination = destination;
     }
 
     // MODIFIES: this
     // EFFECTS: writes JSON representation of ResourceManager, FinanceManager, and GenderEquityTracker to file
     public void write(ResourceManager resourceManager, FinanceManager financeManager, GenderEquityTracker equityTracker) throws IOException {
-       //stub
+        JSONObject json = new JSONObject();
+        json.put("resourceManager", resourceManager.toJson());
+        json.put("financeManager", financeManager.toJson());
+        json.put("genderEquityTracker", equityTracker.toJson());
+
+        try (FileWriter file = new FileWriter(destination)) {
+            file.write(json.toString(4)); // 4 spaces indent
+        }
     }
 }
