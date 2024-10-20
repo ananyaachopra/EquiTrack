@@ -1,7 +1,5 @@
 package model;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.json.JSONObject;
 
 /**
  * Represents a resource in the resource library.
@@ -9,7 +7,7 @@ import java.util.List;
  */
 public class Resource {
     private String title;
-    private List<String> categories;
+    private String category;
     private String description;
     private String url;
 
@@ -17,8 +15,7 @@ public class Resource {
     // url
     public Resource(String title, String category, String description, String url) {
         this.title = title;
-        this.categories = new ArrayList<>();
-        this.categories.add(category);
+        this.category = category;
         this.description = description;
         this.url = url;
     }
@@ -30,17 +27,9 @@ public class Resource {
     }
 
     // MODIFIES: this
-    // EFFECTS: adds a category to the list if it's not already present
-    public void addCategory(String category) {
-        if (!categories.contains(category)) {
-            categories.add(category);
-        }
-    }
-
-    // MODIFIES: this
-    // EFFECTS: removes the specified category
-    public void removeCategory(String category) {
-        categories.remove(category);
+    // EFFECTS: updates the category of the resource
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     // MODIFIES: this
@@ -65,8 +54,8 @@ public class Resource {
         return title;
     }
 
-    public List<String> getCategories() {
-        return categories;
+    public String getCategory() {
+        return category;
     }
 
     public String getDescription() {
@@ -77,14 +66,22 @@ public class Resource {
         return url;
     }
 
+
     // EFFECTS: returns all details of the resource as a formatted string
     public String getResourceDetails() {
-        return "Title: " + title + "\n"
-                +
-                "Categories: " + categories + "\n"
-                +
-                "Description: " + description + "\n"
-                +
-                "URL: " + url;
+        return "Title: " + title + "\n" +
+               "Category: " + category + "\n" +
+               "Description: " + description + "\n" +
+               "URL: " + url;
+    }
+
+    // EFFECTS: returns this Resource as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        json.put("title", title);
+        json.put("category", category);  
+        json.put("description", description);
+        json.put("url", url);
+        return json;
     }
 }

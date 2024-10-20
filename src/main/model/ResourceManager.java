@@ -1,5 +1,6 @@
 package model;
-
+import org.json.JSONArray;
+import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +50,7 @@ public class ResourceManager {
     public List<Resource> searchByCategory(String category) {
         List<Resource> foundResources = new ArrayList<>();
         for (Resource r : resources) {
-            if (r.getCategories().contains(category)) {
+            if (r.getCategory() == category) {
                 foundResources.add(r);
             }
         }
@@ -65,5 +66,17 @@ public class ResourceManager {
         }
         return false;
     }
+
+    // EFFECTS: returns this ResourceManager as a JSON object
+    public JSONObject toJson() {
+        JSONObject json = new JSONObject();
+        JSONArray resourceArray = new JSONArray();
+        for (Resource resource : resources) {
+            resourceArray.put(resource.toJson());  // Assuming Resource has a toJson() method
+        }
+        json.put("resources", resourceArray);
+        return json;
+    }
+    
 }
 
