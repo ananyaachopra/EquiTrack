@@ -1,4 +1,5 @@
 package model;
+
 import org.json.JSONObject;
 /**
  * Represents a company with gender diversity metrics.

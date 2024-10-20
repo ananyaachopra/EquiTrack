@@ -1,4 +1,5 @@
 package model;
+
 import org.json.JSONObject;
 
 /**
@@ -66,20 +67,22 @@ public class Resource {
         return url;
     }
 
-
     // EFFECTS: returns all details of the resource as a formatted string
     public String getResourceDetails() {
-        return "Title: " + title + "\n" +
-               "Category: " + category + "\n" +
-               "Description: " + description + "\n" +
-               "URL: " + url;
+        return "Title: " + title + "\n"
+                +
+                "Category: " + category + "\n"
+                +
+                "Description: " + description + "\n"
+                +
+                "URL: " + url;
     }
 
     // EFFECTS: returns this Resource as a JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("title", title);
-        json.put("category", category);  
+        json.put("category", category);
         json.put("description", description);
         json.put("url", url);
         return json;
