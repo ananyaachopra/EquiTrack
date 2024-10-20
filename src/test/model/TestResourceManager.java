@@ -1,10 +1,11 @@
 package model;
 
 import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 
 import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class TestResourceManager {
     private ResourceManager manager;
@@ -29,7 +30,7 @@ public class TestResourceManager {
 
         // Adding the same resource again (should not duplicate)
         manager.addResource(resource1);
-        assertEquals(1, resources.size()); 
+        assertEquals(1, resources.size());
     }
 
     @Test
@@ -77,11 +78,11 @@ public class TestResourceManager {
 
     @Test
     public void testSearchByCategory() {
-        resource1.addCategory("Personal Finance");
-        resource2.addCategory("Career Advice");
+        resource1.setCategory("Personal Finance");
+        resource2.setCategory("Career Advice");
         manager.addResource(resource1);
         manager.addResource(resource2);
-        
+
         List<Resource> foundResources = manager.searchByCategory("Personal Finance");
         assertEquals(1, foundResources.size());
         assertTrue(foundResources.contains(resource1));
