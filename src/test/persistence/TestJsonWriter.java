@@ -1,9 +1,11 @@
-package model;
+package persistence;
+
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import persistence.*;
+import model.*;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

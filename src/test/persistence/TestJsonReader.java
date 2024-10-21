@@ -1,9 +1,10 @@
-package model;
+package persistence;
 
-import persistence.*;
 import org.json.JSONObject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import model.*;
 
 import java.io.IOException;
 import java.time.LocalDate;
