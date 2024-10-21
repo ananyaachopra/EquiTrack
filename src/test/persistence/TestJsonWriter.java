@@ -27,8 +27,10 @@ public class TestJsonWriter {
 
         // Initialize ResourceManager
         resourceManager = new ResourceManager();
-        Resource resource1 = new Resource("Financial Literacy", "Finance", "A guide to managing personal finances.", "https://www.finances.com");
-        Resource resource2 = new Resource("Career Development", "Career", "Tips for advancing in your career.", "https://www.builtin.com");
+        Resource resource1 = new Resource("Financial Literacy", "Finance", "A guide to managing personal finances.",
+                "https://www.finances.com");
+        Resource resource2 = new Resource("Career Development", "Career", "Tips for advancing in your career.",
+                "https://www.builtin.com");
         resourceManager.addResource(resource1);
         resourceManager.addResource(resource2);
 
@@ -53,45 +55,52 @@ public class TestJsonWriter {
             String content = new String(Files.readAllBytes(Paths.get(TEST_FILE)));
             JSONObject jsonObject = new JSONObject(content);
 
-            // Validate ResourceManager
-            JSONObject jsonResourceManager = jsonObject.getJSONObject("resourceManager");
-            List<Object> resources = jsonResourceManager.getJSONArray("resources").toList();
-            assertEquals(2, resources.size());
-
-            // Validate first resource
-            JSONObject resource1 = jsonResourceManager.getJSONArray("resources").getJSONObject(0);
-            assertEquals("Financial Literacy", resource1.getString("title"));
-            assertEquals("Finance", resource1.getString("category"));
-            assertEquals("A guide to managing personal finances.", resource1.getString("description"));
-            assertEquals("https://www.finances.com", resource1.getString("url"));
-
-            // Validate FinanceManager
-            JSONObject jsonFinanceManager = jsonObject.getJSONObject("financeManager");
-            List<Object> expenses = jsonFinanceManager.getJSONArray("expenses").toList();
-            assertEquals(1, expenses.size());
-
-            // Validate first expense
-            JSONObject expense1 = jsonFinanceManager.getJSONArray("expenses").getJSONObject(0);
-            assertEquals("Rent", expense1.getString("category"));
-            assertEquals(1200.0, expense1.getDouble("amount"));
-            assertEquals("Monthly rent for apartment", expense1.getString("description"));
-            assertEquals("2024-10-01", expense1.getString("date"));
-
-            // Validate GenderEquityTracker
-            JSONObject jsonEquityTracker = jsonObject.getJSONObject("genderEquityTracker");
-            List<Object> companies = jsonEquityTracker.getJSONArray("companies").toList();
-            assertEquals(1, companies.size());
-
-            // Validate first company
-            JSONObject company1 = jsonEquityTracker.getJSONArray("companies").getJSONObject(0);
-            assertEquals("TechCorp", company1.getString("name"));
-            assertEquals(40, company1.getInt("womenInLeadershipPercentage"));
-            assertEquals(20, company1.getInt("payGapPercentage"));
-            assertEquals(60, company1.getInt("overallDiversityRatio"));
+            validateResourceManager(jsonObject);
+            validateFinanceManager(jsonObject);
+            validateGenderEquityTracker(jsonObject);
 
         } catch (IOException e) {
             fail("IOException should not have been thrown");
         }
+    }
+
+    private void validateResourceManager(JSONObject jsonObject) {
+        JSONObject jsonResourceManager = jsonObject.getJSONObject("resourceManager");
+        List<Object> resources = jsonResourceManager.getJSONArray("resources").toList();
+        assertEquals(2, resources.size());
+
+        // Validate first resource
+        JSONObject resource1 = jsonResourceManager.getJSONArray("resources").getJSONObject(0);
+        assertEquals("Financial Literacy", resource1.getString("title"));
+        assertEquals("Finance", resource1.getString("category"));
+        assertEquals("A guide to managing personal finances.", resource1.getString("description"));
+        assertEquals("https://www.finances.com", resource1.getString("url"));
+    }
+
+    private void validateFinanceManager(JSONObject jsonObject) {
+        JSONObject jsonFinanceManager = jsonObject.getJSONObject("financeManager");
+        List<Object> expenses = jsonFinanceManager.getJSONArray("expenses").toList();
+        assertEquals(1, expenses.size());
+
+        // Validate first expense
+        JSONObject expense1 = jsonFinanceManager.getJSONArray("expenses").getJSONObject(0);
+        assertEquals("Rent", expense1.getString("category"));
+        assertEquals(1200.0, expense1.getDouble("amount"));
+        assertEquals("Monthly rent for apartment", expense1.getString("description"));
+        assertEquals("2024-10-01", expense1.getString("date"));
+    }
+
+    private void validateGenderEquityTracker(JSONObject jsonObject) {
+        JSONObject jsonEquityTracker = jsonObject.getJSONObject("genderEquityTracker");
+        List<Object> companies = jsonEquityTracker.getJSONArray("companies").toList();
+        assertEquals(1, companies.size());
+
+        // Validate first company
+        JSONObject company1 = jsonEquityTracker.getJSONArray("companies").getJSONObject(0);
+        assertEquals("TechCorp", company1.getString("name"));
+        assertEquals(40, company1.getInt("womenInLeadershipPercentage"));
+        assertEquals(20, company1.getInt("payGapPercentage"));
+        assertEquals(60, company1.getInt("overallDiversityRatio"));
     }
 
     @Test
