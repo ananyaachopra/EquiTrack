@@ -7,7 +7,8 @@ import org.json.JSONObject;
 import java.io.*;
 
 /**
- * Represents a writer that writes JSON representation of the application state to a file.
+ * Represents a writer that writes JSON representation of the application state
+ * to a file.
  */
 public class JsonWriter {
     private String destination;
@@ -18,8 +19,10 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of ResourceManager, FinanceManager, and GenderEquityTracker to file
-    public void write(ResourceManager resourceManager, FinanceManager financeManager, GenderEquityTracker equityTracker) throws IOException {
+    // EFFECTS: writes JSON representation of ResourceManager, FinanceManager, and
+    // GenderEquityTracker to file
+    public void write(ResourceManager resourceManager, FinanceManager financeManager,
+            GenderEquityTracker equityTracker) throws IOException {
         JSONObject json = new JSONObject();
         json.put("resourceManager", resourceManager.toJson());
         json.put("financeManager", financeManager.toJson());

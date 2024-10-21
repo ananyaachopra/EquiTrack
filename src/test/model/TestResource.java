@@ -10,8 +10,8 @@ public class TestResource {
 
     @BeforeEach
     void runBefore() {
-        resource1 = new Resource("Financial Literacy", "Finance", 
-            "A guide to managing personal finances.", "https://www.finances.com");
+        resource1 = new Resource("Financial Literacy", "Finance",
+                "A guide to managing personal finances.", "https://www.finances.com");
     }
 
     @Test
@@ -19,7 +19,7 @@ public class TestResource {
         assertEquals("Financial Literacy", resource1.getTitle());
         assertEquals("A guide to managing personal finances.", resource1.getDescription());
         assertEquals("https://www.finances.com", resource1.getUrl());
-        assertEquals("Finance", resource1.getCategory()); 
+        assertEquals("Finance", resource1.getCategory());
     }
 
     @Test
@@ -48,7 +48,8 @@ public class TestResource {
 
     @Test
     public void testIsEqual() {
-        Resource duplicate = new Resource("Financial Literacy", "Finance", "All things Finance", "https://investopedia.com");
+        Resource duplicate = new Resource("Financial Literacy", "Finance", "All things Finance",
+                "https://investopedia.com");
         assertTrue(resource1.isEqual(duplicate));
 
         duplicate = new Resource("World of Finance", "Finance", "Everything Finance", "https://www.finances.com");
@@ -64,10 +65,13 @@ public class TestResource {
 
     @Test
     public void testGetResourceDetails() {
-        String expected = "Title: Financial Literacy\n" +
-                          "Category: Finance\n" +
-                          "Description: A guide to managing personal finances.\n" +
-                          "URL: https://www.finances.com";
+        String expected = "Title: Financial Literacy\n"
+                +
+                "Category: Finance\n"
+                +
+                "Description: A guide to managing personal finances.\n"
+                +
+                "URL: https://www.finances.com";
         assertEquals(expected, resource1.getResourceDetails());
     }
 }

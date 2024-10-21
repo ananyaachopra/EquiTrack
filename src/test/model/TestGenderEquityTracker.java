@@ -70,9 +70,9 @@ public class TestGenderEquityTracker {
         tracker.addCompany(company1);
         tracker.addCompany(company2);
         tracker.addCompany(company3);
-        
+
         assertEquals(40, tracker.averageDiversityRatio(), 0.01);
-}
+    }
 
     @Test
     public void testGetHighestWomenInLeadership() {

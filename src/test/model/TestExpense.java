@@ -11,8 +11,8 @@ public class TestExpense {
 
     @BeforeEach
     public void runBefore() {
-        expense = new Expense("Housing", 1200, 
-        "Rent for October", LocalDate.of(2024, 10, 1));
+        expense = new Expense("Housing", 1200,
+                "Rent for October", LocalDate.of(2024, 10, 1));
     }
 
     @Test
@@ -50,23 +50,25 @@ public class TestExpense {
 
     @Test
     public void testApplyDiscount() {
-        expense.applyDiscount(10); 
+        expense.applyDiscount(10);
         assertEquals(1080, expense.getAmount(), 0.01);
-    } 
+    }
 
     @Test
     public void testApplyTax() {
-        expense.applyTax(5); 
-        assertEquals(1260, expense.getAmount(), 0.01); 
+        expense.applyTax(5);
+        assertEquals(1260, expense.getAmount(), 0.01);
     }
 
     @Test
     public void testGetExpenseDetails() {
-        String expected = "Category: Housing\n" +
-                          "Amount: $1200.00\n" +
-                          "Description: Rent for October\n" +
-                          "Date: 2024-10-01";
+        String expected = "Category: Housing\n"
+                +
+                "Amount: $1200.00\n"
+                +
+                "Description: Rent for October\n"
+                +
+                "Date: 2024-10-01";
         assertEquals(expected, expense.getExpenseDetails());
     }
 }
-
