@@ -4,7 +4,7 @@ A  platform designed to empower gender minorities by providing essential tools f
 
 ## **Key Features**
 ### 1. 📚 **Resource Library**
-- Access empowering articles, videos, and opportunities designed to boost career growth, personal development, and well-being.
+- Access empowering articles and opportunities designed to boost career growth, personal development, and well-being.
 - Easily categorize resources into topics such as financial literacy, mental health, career development, and more to support your personal and professional journey.
 
 ### 2. 💸 **Finance Tracking**
@@ -24,6 +24,29 @@ A  platform designed to empower gender minorities by providing essential tools f
 - *As a user*, I want to be able to save the state of my resource library, expense tracker, and gender equity tracker, so I can retrieve it later.
 - *As a user*, I want to be able to load previously saved resources, expenses, and gender equity data, so I can access all the information I had entered in my last session.
 
+## Instructions for End User
+
+- To add a new **Resource** to the Resource Manager, open the **Manage Resources** panel and click the **Add Resource** button. Enter the resource details when prompted.
+- To add a new **Expense** to the Finance Manager, open the **Manage Finances** panel and click the **Add Expense** button. Fill in the details as requested.
+- To add a new **Company** to the Gender Equity Tracker, open the **Manage Equity** panel and click the **Add Company** button, then provide the company's gender equity details.
+
+### Filter
+- **Resource Filter Action**: Within the **Manage Resources** panel, click **Filter Resources** to view resources of a specific category. Enter the desired category when prompted to filter results.
+- **Finance Filter Action**: In the **Manage Finances** panel, click the **Filter by Month** button. You’ll be asked to enter a month (1-12), and the display will update to show expenses from the specified month.
+- **Equity Filter Action**: Within the **Manage Equity** panel, click **Filter by Diversity** to see companies with a diversity ratio above a specified percentage. Enter the percentage when prompted to filter results.
+
+### Sort/Highlight
+- **Resource Highlight Action**: In the **Manage Resources** panel, click **Highlight Important** to emphasize important resources in the display.
+- **Finance Sort Action**: In the **Manage Finances** panel, click **Sort by Amount** to view expenses sorted by amount in ascending order.
+- **Equity Sort Action**: In the **Manage Equity** panel, click **Sort by Diversity** to order companies based on their diversity ratios in descending order.
+
+### Saving the State of the Application
+- To **save the state** of the application, return to the main menu and click the **Save State** button. You will receive a confirmation message if the save is successful.
+
+### Loading the State of the Application
+- To **load a previously saved state**, return to the main menu and click the **Load State** button. You will receive a confirmation message when the data is loaded successfully, and all panels will display the loaded information.
+
+#### The **visual component** for this application includes **images** in each panel. Each panel (Resources, Finances, and Equity) displays a relevant  image at the bottom of the panel window. Additionally, there is a **splash screen image** displayed when the application first launches.
 
 ## **Why EquiTrack?**
 *EquiTrack* is a reflection of my passion for creating solutions that promote fairness, inclusion, and personal development.
