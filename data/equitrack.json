@@ -1,0 +1,56 @@
+{
+    "genderEquityTracker": {"companies": [
+        {
+            "womenInLeadershipPercentage": 70,
+            "payGapPercentage": 15,
+            "name": "netflix",
+            "overallDiversityRatio": 85
+        },
+        {
+            "womenInLeadershipPercentage": 60,
+            "payGapPercentage": 10,
+            "name": "google",
+            "overallDiversityRatio": 70
+        }
+    ]},
+    "financeManager": {"expenses": [
+        {
+            "date": "2024-10-01",
+            "amount": 1000,
+            "description": "rent",
+            "category": "housing"
+        },
+        {
+            "date": "2024-11-01",
+            "amount": 1000,
+            "description": "rent",
+            "category": "housing"
+        },
+        {
+            "date": "2024-10-05",
+            "amount": 100,
+            "description": "grocery",
+            "category": "food"
+        }
+    ]},
+    "resourceManager": {"resources": [
+        {
+            "description": "budgeting101",
+            "title": "financial literacy",
+            "category": "finance",
+            "url": "finance.com"
+        },
+        {
+            "description": "all things that pay ahah",
+            "title": "finance in tech",
+            "category": "fintech",
+            "url": "fintech.com"
+        },
+        {
+            "description": "bridge the gap",
+            "title": "stem education for women",
+            "category": "stem",
+            "url": "stem.com"
+        }
+    ]}
+}
