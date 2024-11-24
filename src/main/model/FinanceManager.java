@@ -21,6 +21,7 @@ public class FinanceManager {
     // EFFECTS: adds an expense to the collection
     public void addExpense(Expense expense) {
         expenses.add(expense);
+        EventLog.getInstance().logEvent(new Event("Added expense: " + expense.getDescription()));
     }
 
     // MODIFIES: this
@@ -28,6 +29,7 @@ public class FinanceManager {
     public void removeExpense(String category, String description) {
         expenses.removeIf(expense -> expense.getCategory().equalsIgnoreCase(category)
                 && expense.getDescription().equalsIgnoreCase(description));
+        EventLog.getInstance().logEvent(new Event("Removed expense: " + description));
     }
 
     // EFFECTS: returns a list of all expenses
@@ -63,6 +65,7 @@ public class FinanceManager {
                 filtered.add(expense);
             }
         }
+        EventLog.getInstance().logEvent(new Event("Filtered expenses by month: " + month + "/" + year));
         return filtered;
     }
 

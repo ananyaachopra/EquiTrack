@@ -20,12 +20,14 @@ public class Expense {
         this.amount = amount;
         this.description = description;
         this.date = date;
+        EventLog.getInstance().logEvent(new Event("Created new Expense: " + description + " for $" + amount));
     }
 
     // MODIFIES: this
     // EFFECTS: updates the amount of the expense
     public void updateAmount(double newAmount) {
         this.amount = newAmount;
+        EventLog.getInstance().logEvent(new Event("Updated amount for expense " + description + " to $" + newAmount));
     }
 
     // EFFECTS: returns true if the expense is in the specified category

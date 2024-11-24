@@ -52,3 +52,20 @@ A  platform designed to empower gender minorities by providing essential tools f
 *EquiTrack* is a reflection of my passion for creating solutions that promote fairness, inclusion, and personal development.
 *EquiTrack* is not just a tool—it’s a movement. By arming individuals and organizations with the right data and resources, it empowers users to drive meaningful change. Whether you're an individual seeking personal growth or an organization striving for gender equity, *EquiTrack* is designed to meet your needs. Join the movement, **let's close the gap. Together.**
 
+## Phase 4: Task 2
+
+Below is a representative sample of the events logged during the execution of the EquiTrack application. These events showcase basic interactions:
+
+Sat Nov 23 17:40:18 PST 2024: Added resource: financial literacy
+
+Sat Nov 23 17:40:18 PST 2024: Added resource: stem education for women
+
+Sat Nov 23 17:40:18 PST 2024: Created new Expense: rent for $1000.0
+
+Sat Nov 23 17:40:18 PST 2024: Created new Expense: grocery for $100.0
+
+Sat Nov 23 17:40:18 PST 2024: Added company: netflix
+
+Sat Nov 23 17:40:18 PST 2024: Added company: google
+
+

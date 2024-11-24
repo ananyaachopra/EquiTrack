@@ -22,6 +22,7 @@ public class ResourceManager {
     public void addResource(Resource resource) {
         if (!resourceExists(resource)) {
             resources.add(resource);
+            EventLog.getInstance().logEvent(new Event("Added resource: " + resource.getTitle()));
         }
     }
 
@@ -29,6 +30,7 @@ public class ResourceManager {
     // EFFECTS: removes a resource from the library by title or URL
     public void removeResource(String titleOrUrl) {
         resources.removeIf(r -> r.getTitle().equalsIgnoreCase(titleOrUrl) || r.getUrl().equalsIgnoreCase(titleOrUrl));
+        EventLog.getInstance().logEvent(new Event("Removed resource: " + titleOrUrl));
     }
 
     // EFFECTS: returns a list of all resources in the library
@@ -44,6 +46,7 @@ public class ResourceManager {
                 foundResources.add(r);
             }
         }
+        EventLog.getInstance().logEvent(new Event("Searched resources by title: " + title));
         return foundResources;
     }
 
@@ -55,6 +58,7 @@ public class ResourceManager {
                 foundResources.add(r);
             }
         }
+        EventLog.getInstance().logEvent(new Event("Searched resources by category: " + category));
         return foundResources;
     }
 

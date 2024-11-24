@@ -1,5 +1,7 @@
 package ui;
 
+import model.Event;
+import model.EventLog;
 import model.FinanceManager;
 import model.GenderEquityTracker;
 import model.ResourceManager;
@@ -10,6 +12,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import org.json.JSONObject;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 /**
  * The main GUI for the EquiTrack application.
@@ -37,6 +41,15 @@ public class EquiTrackAppGUI extends JFrame {
         jsonReader = new JsonReader(JSON_STORE);
 
         initializeMainMenu();
+
+    
+        // Attach a WindowListener for logging
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                printEventLog(); // Print the event log when the application closes
+            }
+        });
     }
 
     // MODIFIES: this
@@ -53,6 +66,14 @@ public class EquiTrackAppGUI extends JFrame {
         addFooterLabel();
 
         setVisible(true);
+    }
+
+    // Prints all events from the EventLog to the console
+    private void printEventLog() {
+        System.out.println("Event Log:");
+        for (Event event : EventLog.getInstance()) {
+            System.out.println(event.getDate() + ": " + event.getDescription());
+        }
     }
 
     // MODIFIES: this
@@ -191,4 +212,6 @@ public class EquiTrackAppGUI extends JFrame {
             JOptionPane.showMessageDialog(this, "Error loading application state: " + e.getMessage());
         }
     }
+
+    
 }

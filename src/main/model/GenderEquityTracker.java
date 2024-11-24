@@ -21,12 +21,14 @@ public class GenderEquityTracker {
     // EFFECTS: adds a company to the tracker
     public void addCompany(Company company) {
         companies.add(company);
+        EventLog.getInstance().logEvent(new Event("Added company: " + company.getName()));
     }
 
     // MODIFIES: this
     // EFFECTS: removes a company from the tracker by name
     public void removeCompany(String name) {
         companies.removeIf(company -> company.getName().equalsIgnoreCase(name));
+        EventLog.getInstance().logEvent(new Event("Removed company: " + name));
     }
 
     // EFFECTS: returns a list of all companies in the tracker

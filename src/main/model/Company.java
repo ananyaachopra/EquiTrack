@@ -25,18 +25,21 @@ public class Company {
     // EFFECTS: updates the percentage of women in leadership
     public void updateWomenInLeadership(double newPercentage) {
         this.womenInLeadership = newPercentage;
+        EventLog.getInstance().logEvent(new Event("Set Women in Leadership for " + name + " to " + newPercentage));
     }
 
     // MODIFIES: this
     // EFFECTS: updates the pay gap percentage
     public void updatePayGap(double newPayGap) {
         this.payGap = newPayGap;
+        EventLog.getInstance().logEvent(new Event("Updated Pay Gap for " + name + " to " + newPayGap + "%"));
     }
 
     // MODIFIES: this
     // EFFECTS: updates the overall diversity ratio
     public void updateDiversityRatio(double newDiversityRatio) {
         this.diversityRatio = newDiversityRatio;
+        EventLog.getInstance().logEvent(new Event("Updated Diversity Ratio for " + name + " to " + newDiversityRatio));
     }
 
     // EFFECTS: returns a string with all the company's gender equity details
