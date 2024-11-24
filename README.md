@@ -68,4 +68,9 @@ Sat Nov 23 17:40:18 PST 2024: Added company: netflix
 
 Sat Nov 23 17:40:18 PST 2024: Added company: google
 
+## Phase 4: Task 3
+
+The UML class diagram for this project demonstrates a well-structured design with clear separation of responsibilities among classes. However, with more time, I would refactor repeated patterns in the manager classes into an abstract class or interface, to standardize shared behaviors like adding, removing, filtering, and sorting while reducing redundancy. Additionally, I would decouple the `toJson()` methods from the core model classes and move the serialization logic to a dedicated `Serializer` class. This change would simplify the model classes, ensure a cleaner design, and better adhere to the single-responsibility principle. These changes would enhance the overall design by improving modularity, reducing code duplication, and aligning with SOLID principles. While the current design is functional and adheres to project requirements, these refinements would make the system more scalable, maintainable, and easier to extend in future iterations.
+
+
 
